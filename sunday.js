@@ -12,3 +12,14 @@ var runningSum = function(nums) {
     return temp;
     
 };
+
+var kidsWithCandies = function(candies, extraCandies) {
+    let fin = [];
+    let max = Math.max(...candies);
+    for(let i = 0; i < candies.length; i++){
+        fin.push( candies[i] + extraCandies >= max ? true : false)
+    }
+    
+    return fin;
+    
+};
