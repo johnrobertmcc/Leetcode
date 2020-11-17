@@ -11,4 +11,28 @@ var reverse = function(x) {
   return ans;
 };
 
-console.log(reverse(-123))
+// console.log(reverse(-123))
+
+
+
+var subtractProductAndSum = function(n) {
+
+    let value = n;
+    let sum = 0;
+    let product = 1;
+
+    while(n){
+        sum += n % 10;
+        n = Math.floor(n/10)
+    }
+    
+    while(value){
+        product *= value % 10;
+        value = Math.floor(value/10)
+    }
+
+    return product - sum;
+    
+};
+
+console.log(subtractProductAndSum(123))
