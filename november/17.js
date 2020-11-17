@@ -35,4 +35,30 @@ var subtractProductAndSum = function(n) {
     
 };
 
-console.log(subtractProductAndSum(123))
+// console.log(subtractProductAndSum(123))
+
+// Input: nums = [555,901,482,1771]
+// Output: 1 
+// Explanation: 
+// Only 1771 contains an even number of digits.
+
+
+var findNumbers = function(nums) {
+    temp = [];
+    sum = 0;
+    for(let i = 0; i < nums.length; i++){
+        temp.push(nums[i].toString());
+    }    
+    for(let i = 0; i < nums.length; i++){
+        sum += temp[i].length % 2 == 0 ? 1 : 0;
+    }    
+
+    return sum;
+};
+
+console.log(findNumbers([555,901,482,1771]))
+
+
+var countGoodTriplets = function(arr, a, b, c) {
+    
+};
