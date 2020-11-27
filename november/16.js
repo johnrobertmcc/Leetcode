@@ -108,3 +108,23 @@ var reformatDate = function(date) {
     let fin = [year, month, day];
     return fin.join('-')
 };
+
+var reformatDate = function(date) {
+    
+    const months = {
+'Jan': '01', "Feb": '02', "Mar":'03', "Apr":'04', "May":'05', "Jun":'06', "Jul":'07',"Aug":'08',"Sep":'09',"Oct":10, "Nov":11, "Dec":12
+    }
+    
+    let temp = date.split(' ');
+    
+    let day1 = temp[0];
+    let month = months[temp[1]];
+    let year = temp[2];
+    
+    let day = day1.replace(/[a-z]/g, '');
+    
+    day = day.length === 1 ? 0 + day : day
+    
+    let fin = [year, month, day];
+    return fin.join('-')
+};
