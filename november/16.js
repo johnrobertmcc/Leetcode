@@ -94,3 +94,17 @@ var toLowerCase = function (str) {
     return lowerCase;
 
 };
+
+var reformatDate = function(date) {
+    
+    let temp = date.split(' ');
+    
+    let day = temp[0];
+    let month = temp[1];
+    let year = temp[2];
+    
+    
+    
+    let fin = [year, month, day];
+    return fin.join('-')
+};
