@@ -24,6 +24,27 @@ var interpret = function(command) {
     console.log(fin)
 };
 
-interpret("(al)G(al)()()G")
-interpret("G()()()()(al)")
-interpret("G()(al)")
+// interpret("(al)G(al)()()G")
+// interpret("G()()()()(al)")
+// interpret("G()(al)")
+
+
+var countConsistentStrings = function(allowed, words) {
+
+    let temp= [];
+    allowed.split('').map(letter => {
+        for(let i = 0; i < words.length; i++){
+            temp[i] = words[i].replace(new RegExp(letter, 'gi'), "")
+        }
+    })
+    temp = temp.filter(entry => /\S/.test(entry));
+
+    console.log(temp)
+    console.log(words)
+
+    // console.log(temp.length)
+
+    // console.log(words.length - temp.length);
+};
+
+countConsistentStrings("cad", ["cc","acd","b","ba","bac","bad","ac","d"] )
