@@ -24,27 +24,42 @@ var interpret = function(command) {
     console.log(fin)
 };
 
-// interpret("(al)G(al)()()G")
-// interpret("G()()()()(al)")
-// interpret("G()(al)")
 
+// var countConsistentStrings = function(allowed, words) {
+
+//     let temp= [];
+//     allowed.split('').map(letter => {
+//         for(let i = 0; i < words.length; i++){
+//             temp[i] = words[i].replace(new RegExp(letter, 'gi'), "")
+//         }
+//     })
+//     temp = temp.filter(entry => /\S/.test(entry));
+
+//     console.log(temp)
+//     console.log(words)
+
+//     // console.log(temp.length)
+
+//     // console.log(words.length - temp.length);
+// };
 
 var countConsistentStrings = function(allowed, words) {
-
-    let temp= [];
-    allowed.split('').map(letter => {
-        for(let i = 0; i < words.length; i++){
-            temp[i] = words[i].replace(new RegExp(letter, 'gi'), "")
+    let counter = 0;
+    for(var i = 0; i < words.length; i++) {
+        let t = true;
+        for(var j = 0; j < words[i].length; j++) {
+            if(allowed.includes(words[i][j])){
+                continue;
+            } else {
+                t = false;
+                break;
+            }
         }
-    })
-    temp = temp.filter(entry => /\S/.test(entry));
-
-    console.log(temp)
-    console.log(words)
-
-    // console.log(temp.length)
-
-    // console.log(words.length - temp.length);
+        if(t) {
+            counter++;
+        }
+    }
+    console.log(counter);
 };
 
 countConsistentStrings("cad", ["cc","acd","b","ba","bac","bad","ac","d"] )
