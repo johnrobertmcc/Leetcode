@@ -17,3 +17,9 @@ var sortColors = function(nums) {
 };
 
 console.log(sortColors([2,0,2,1,1,0]))
+
+var intersect = function(nums1, nums2) {
+    
+};
+
+console.log(intersect([4,9,5], [9,4,9,8,4]))
