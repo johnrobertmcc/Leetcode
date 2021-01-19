@@ -30,22 +30,38 @@
 
 // console.log(getRow(3))
 
+// var checkStraightLine = function(coordinates) {
+
+//     let base = coordinates[0];
+//     let rest = coordinates.slice(1);
+//     let x = base[0];
+//     let y = base[1]
+
+//     for(let i = 0; i < rest.length; i++){
+//         if(rest[i][0] == x + 1 && rest[i][1] == y + 1){
+//             x+=1; y += 1;
+//         }else{
+//             return false
+//         }
+//     }
+
+//     return true
+    
+// };
+
 var checkStraightLine = function(coordinates) {
 
-    let base = coordinates[0];
-    let rest = coordinates.slice(1);
-    let x = base[0];
-    let y = base[1]
-
-    for(let i = 0; i < rest.length; i++){
-        if(rest[i][0] == x + 1 && rest[i][1] == y + 1){
-            x+=1; y += 1;
-        }else{
-            return false
+        if(coordinates.length == 2) return true;
+        
+        let dx = coordinates[1][0] - coordinates[0][0];
+        let dy = coordinates[1][1] - coordinates[0][1];
+        
+        for(let i = 2; i < coordinates.length; i++) {
+            let dx1 = coordinates[i][0] - coordinates[0][0];
+            let dy1 = coordinates[i][1] - coordinates[0][1];
+            if(dx*dy1 != dy*dx1) return false;
         }
-    }
-
-    return true
+        return true;
     
 };
 
