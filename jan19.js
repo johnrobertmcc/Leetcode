@@ -20,4 +20,13 @@ var generate = function(numRows) {
     return result
 };
 
-console.log(generate(5))
+// console.log(generate(5))
+
+var getRow = function(rowIndex) {
+    let rows = generate(rowIndex)
+
+    return rows[rowIndex-1]
+
+};
+
+console.log(getRow(3))
