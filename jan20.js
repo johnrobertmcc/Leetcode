@@ -17,3 +17,20 @@ var missingNumber = function(nums) {
 };
 
 // console.log(missingNumber([3,0,1]))
+
+var findDuplicate = function(nums) {
+
+    let fin = {};
+
+    for(let i = 0; i < nums.length; i++){
+        if(fin[nums[i]]){
+            fin[nums[i]] += 1
+        }else{
+            fin[nums[i]] = 1
+        }
+    }
+    
+    return Object.keys(fin).find( key => fin[key] === Math.max(...Object.values(fin)))
+};
+
+console.log(findDuplicate([3,1,3,4,2]))
