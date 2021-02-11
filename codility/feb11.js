@@ -7,10 +7,7 @@ function solution(A) {
         minWidth++;
         minHeight--;
     }
-
     return minWidth;
-
-    
 }
 
 console.table(solution([6, 5, 5, 6, 2, 2]))
