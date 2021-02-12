@@ -1,19 +1,17 @@
-// function solution(N) {
-//     // write your code in JavaScript (Node.js 8.9.4)
+function solution(N) {
+    // write your code in JavaScript (Node.js 8.9.4)
 
-//     let positive = N > 0;
-//     let str = positive ? N.toString() : (N*-1).toString;
-//     let fin = [];
+    let positive = N > 0;
+    let str = positive ? N.toString() : (N*-1).toString;
+    let fin = [];
 
-//     // for(let i = 0; i < str.length; i++){
+    for(let i = 0; i < str.length; i++){
         
-//     //     let temp = new Number(str.slice(0,i) + '5' + str.slice(i, str.length))
-//     //     fin.push(temp);
-//     // }
+        let temp = new Number(str.slice(0,i) + '5' + str.slice(i, str.length))
+        fin.push(temp);
+    }
 
-//     console.log(str)
-
-//     return positive ? Math.max(...fin) : Math.max(...fin)*-1
+    return positive ? Math.max(...fin) : Math.max(...fin)*-1
 // }
 
 // console.log(solution(-999))
@@ -54,7 +52,7 @@ function solution(S) {
     let fin = [];
 
     for(let i = 0; i <= S.length; i++){
-        for(let j = 0; j < S.length; j++){
+        for(let j = 0; j <= S.length; j++){
             substrings.push(S.slice(i,j))
 
         }
