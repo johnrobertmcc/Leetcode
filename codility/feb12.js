@@ -1,8 +1,8 @@
 function solution(N) {
     // write your code in JavaScript (Node.js 8.9.4)
 
-    let positive = N > 0;
-    let str = positive ? N.toString() : (N*-1).toString;
+    let positive = N >= 0;
+    let str = positive ? N.toString() : (N*-1).toString();
     let fin = [];
 
     for(let i = 0; i < str.length; i++){
@@ -11,8 +11,8 @@ function solution(N) {
         fin.push(temp);
     }
 
-    return positive ? Math.max(...fin) : Math.max(...fin)*-1
-// }
+    return positive ? Math.max(...fin) : Math.min(...fin)*-1
+}
 
 // console.log(solution(-999))
 
@@ -71,18 +71,18 @@ function solution(S) {
 
 console.log(solution("azABaabza"))
 
-// function solution(S, K) {
+function solution(S, K) {
     
-//     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-//     let idx = days.indexOf(S);
+    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    let idx = days.indexOf(S);
     
-//     for(let i = 0; i <= idx; i++){
-//         days.pop(days.unshift())
-//     }
+    for(let i = 0; i <= idx; i++){
+        days.pop(days.unshift())
+    }
 
-//     let newIdx = K % days.length;
-//     console.log(newIdx)
+    let newIdx = K % days.length;
+    console.log(newIdx)
     
-//     return days[newIdx]
-// }
-// console.log(solution("Wed", 2))
+    return days[newIdx]
+}
+console.log(solution("Wed", 2))
